@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear nuevo alumno</title>
+</head>
+<body>
+    <nav>
+        <a href={% url "inicio" %}>INICIO</a>
+        <a href={% url "mostrar_alumnos" %}>ALUMNOS</a>
+    </nav>
+    <h1>Crear nuevo alumno</h1>
+    <form action={% url "nuevo_alumno"%} method="POST">
+        {% comment %} POST: para guardar info {% endcomment %}
+
+        {% comment %} Se necesita un token para que se pueda enviar info {% endcomment %}
+        {% csrf_token %}
+
+        {% comment %} v1
+         <p>Nombre: 
+            <input type="text" name="nombre" id="">
+        </p>
+        <p>Apellido: 
+            <input type="text" name="apellido" id="">
+        </p>
+        <p>Edad: 
+            <input type="number" name="edad" id="">
+        </p> {% endcomment %}
+        
+        
+        {% comment %} v2 - SE DEBE HACER CON FORMULARIOS DE DJANGO {% endcomment %}
+        <table>
+            {{formulario_crea}}
+        </table>
+        
+
+
+        <input type="submit", value="Crear">
+    </form>
+</body>
+</html>

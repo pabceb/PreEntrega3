@@ -6,10 +6,16 @@
     <title>PreEntrega3</title>
 </head>
 <body>
+    <nav>
+        <a href={% url "inicio" %}>INICIO</a>
+        <a href={% url "mostrar_alumnos" %}>ALUMNOS</a>
+        <a href={% url "nuevo_alumno" %}>CREAR ALUMNO</a>
+    </nav>
     <h1>Primera web</h1>
     <p>
-        Ejemplo de contexto(inicial) / cargadores:
+        Ejemplo de contexto(inicial) / cargadores / render:
         {{nombre}} {{apellido}}
     </p>
+    
 </body>
 </html>
